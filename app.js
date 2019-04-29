@@ -1,3 +1,4 @@
+const dotenv = require('dotenv');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
@@ -5,6 +6,7 @@ const path = require('path');
 
 const Sequelize = require('sequelize');
 
+const pg_password = process.env.PG_PASSWORD;
 
 const db = new Sequelize('codegig', 'postgres', 'password', {
     host: 'localhost',
