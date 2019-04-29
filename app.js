@@ -1,4 +1,3 @@
-const dotenv = require('dotenv');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
@@ -6,9 +5,7 @@ const path = require('path');
 
 const Sequelize = require('sequelize');
 
-const pg_password = process.env.PG_PASSWORD;
-
-const db = new Sequelize('codegig', 'postgres', 'password', {
+const db = new Sequelize('codegig', 'postgres', '123456', {
     host: 'localhost',
     dialect: 'postgres',
 
@@ -19,6 +16,17 @@ const db = new Sequelize('codegig', 'postgres', 'password', {
       idle: 10000
     },
 });
+
+
+// Test DB
+db.authenticate()
+    .then(() => {
+        console.log('Connection has been established successfully.');
+    })
+    .catch(err => {
+        console.error('Unable to connect to the database:', err);
+    });
+
 
 const app = express();
 
