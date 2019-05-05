@@ -20,6 +20,7 @@ router.get("/", (req, res) => {
 
 // POST REQUEST (add a gig)
 router.get("/add", (req, res) => {
+    // data to be added to the DB
   const data = {
     title: "Looking for a React developer",
     technologies: "react, javascript, html, css",
@@ -35,7 +36,18 @@ router.get("/add", (req, res) => {
     contact_email: "user1@gmail.com"
   };
 
+  // destructuring the 'data' object
   let { title, technologies, budget, description, contact_email } = data;
+
+  Gig.create({
+      title: title,
+      technologies: technologies,
+      budget: budget,
+      description: description, 
+      contact_email: contact_email
+  })
+  .then(gig => res.redirect('/gigs'))
+  .catch(err => console.log(err));
 });
 
 module.exports = router;
