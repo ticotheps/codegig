@@ -19,6 +19,9 @@ router.get("/", (req, res) => {
     });
 });
 
+// Display add gig form
+router.get('/add', (req, res) => res.render('add'));
+
 // POST REQUEST (add a gig)
 router.post("/add", (req, res) => {
     // data to be added to the DB
