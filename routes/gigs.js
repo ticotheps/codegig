@@ -79,7 +79,10 @@ router.post("/add", (req, res) => {
 
 // Search for gigs
 router.get('/search', (req, res) => {
-  const { term } = req.query; // <- destructured form of 'const term = req.query.term;'
+  let { term } = req.query; // <- destructured form of 'const term = req.query.term;'
+
+  // Makes term lowercase
+  term = term.toLowerCase();
 
   Gig.findAll({ where: { technologies: { [Op.like]: '%' + term + '%' } } })
     .then(gigs => res.render('gigs', { gigs }))
