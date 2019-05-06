@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 });
 
 // POST REQUEST (add a gig)
-router.get("/add", (req, res) => {
+router.post("/add", (req, res) => {
     // data to be added to the DB
   const data = {
     title: "Simple Wordpress Website",
