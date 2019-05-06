@@ -22,9 +22,9 @@ router.get("/", (req, res) => {
 router.get("/add", (req, res) => {
     // data to be added to the DB
   const data = {
-    title: "Looking for a React developer",
-    technologies: "react, javascript, html, css",
-    budget: "$3000",
+    title: "Simple Wordpress Website",
+    technologies: "wordpress, php, html, css",
+    budget: "$1000",
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
        enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -33,7 +33,7 @@ router.get("/add", (req, res) => {
        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
        proident, sunt in culpa qui officia deserunt mollit anim id est 
        laborum.`,
-    contact_email: "user1@gmail.com"
+    contact_email: "user2@gmail.com"
   };
 
   // destructuring the 'data' object
