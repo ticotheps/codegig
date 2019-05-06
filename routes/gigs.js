@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
 // Display add gig form
 router.get('/add', (req, res) => res.render('add'));
 
-// POST REQUEST (add a gig)
+// POST REQUEST (add a gig to the DB)
 router.post("/add", (req, res) => {
     // data to be added to the DB
   const data = {
