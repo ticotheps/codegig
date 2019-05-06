@@ -53,6 +53,16 @@ router.post("/add", (req, res) => {
       contact_email
     })
   } else {
+    if(!budget) {
+      budget = 'Unknown';
+    } else {
+      budget = `$${budget}`;
+    }
+
+    // Makes technologies lowercase and removes space after comma 
+    technologies = technologies.toLowerCase().replace(/, /g, ',');
+
+    // Insert into table
     Gig.create({
       title: title,
       technologies: technologies,
