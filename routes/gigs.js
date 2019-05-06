@@ -25,23 +25,7 @@ router.get('/add', (req, res) => res.render('add'));
 // POST REQUEST (add a gig to the DB)
 router.post("/add", (req, res) => {
     // data to be added to the DB
-  const data = {
-    title: "Simple Wordpress Website",
-    technologies: "wordpress, php, html, css",
-    budget: "$1000",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-       enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-       nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-       in reprehenderit in voluptate velit esse cillum dolore eu 
-       fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-       proident, sunt in culpa qui officia deserunt mollit anim id est 
-       laborum.`,
-    contact_email: "user2@gmail.com"
-  };
-
-  // destructuring the 'data' object
-  let { title, technologies, budget, description, contact_email } = data;
+  let { title, technologies, budget, description, contact_email } = req.body;
 
   Gig.create({
       title: title,
