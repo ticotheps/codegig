@@ -26,6 +26,21 @@ router.get('/add', (req, res) => res.render('add'));
 router.post("/add", (req, res) => {
     // data to be added to the DB
   let { title, technologies, budget, description, contact_email } = req.body;
+  let errors = []; // initializes an 'errors' array
+
+  // Validates Fields
+  if(!title) {
+    errors.push({ text: 'Please add a title'})
+  }
+  if(!technologies) {
+    errors.push({ text: 'Please add some technologies'})
+  }
+  if(!description) {
+    errors.push({ text: 'Please add a description'})
+  }
+  if(!contact_email) {
+    errors.push({ text: 'Please add a contact email'})
+  }
 
   Gig.create({
       title: title,
