@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
   Gig.findAll() // <- returns a promise, so must use .then() and .catch() statements to handle promise
     .then(gigs => {
       res.render('gigs', {
-        gigs
+        gigs:gigs
       });
     })
     .catch(err => {
