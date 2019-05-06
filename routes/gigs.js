@@ -42,15 +42,27 @@ router.post("/add", (req, res) => {
     errors.push({ text: 'Please add a contact email'})
   }
 
-  Gig.create({
+  // Checks for errors
+  if(errors.length > 0) {
+    res.render('add', { // <- if form has errors, re-render the form with those same values that were entered and display errors
+      errors,
+      title,
+      technologies,
+      budget,
+      description,
+      contact_email
+    })
+  } else {
+    Gig.create({
       title: title,
       technologies: technologies,
       budget: budget,
       description: description, 
       contact_email: contact_email
-  })
-  .then(gig => res.redirect('/gigs'))
-  .catch(err => console.log(err));
+    })
+      .then(gig => res.redirect('/gigs'))
+      .catch(err => console.log(err));
+  }
 });
 
 module.exports = router;
