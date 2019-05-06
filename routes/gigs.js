@@ -10,8 +10,9 @@ router.get("/", (req, res) => {
 
   Gig.findAll() // <- returns a promise, so must use .then() and .catch() statements to handle promise
     .then(gigs => {
-      console.log(gigs);
-      res.sendStatus(200);
+      res.render('gigs', {
+        gigs: gigs
+      });
     })
     .catch(err => {
       console.log(err);
