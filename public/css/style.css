@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 :root {
-  --primary-color: #568c9b;
-  --primary-hover-color: #64a5b7;
+  --primary-color: dodgerblue;
+  --primary-hover-color: darkblue;
   --bg-color: #333;
   --box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.7);
 }
@@ -15,8 +15,9 @@ body {
   font-family: 'Lato', sans-serif;
   margin: 0;
   color: #333;
-  background: #f4f4f4;
-  font-size: 20px;
+  background: black;
+  opacity: 0.7;
+  font-size: 25px;
 }
 
 ul {
@@ -25,12 +26,12 @@ ul {
 }
 
 a {
-  color: #fff;
+  color: white;
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--primary-color);
+  color: var(--primary-hover-color);
 }
 
 .container {
@@ -104,7 +105,7 @@ header.inner {
 
 /* Home Search */
 .search-wrap {
-  background: url('../img/showcase.jpg') no-repeat center center fixed / cover;
+  background: url('../img/laptop.jpg') no-repeat center center fixed / cover;
   height: 100vh;
   width: 100%;
   padding: 1.3rem 3rem;
