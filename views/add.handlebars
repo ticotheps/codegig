@@ -1,7 +1,7 @@
 <section id="add" class="container">
     <div class="form-wrap">
-      <h1>Add A Gig</h1>
-      <p>Your contact email will be shared with registered users to apply to your gig</p>
+      <h1>Add A Listing</h1>
+      <p>Your contact email will be shared with registered users to apply to your coding job</p>
       {{#each errors}}
         <div class="error">
           <p>{{text}}</p>
@@ -9,7 +9,7 @@
       {{/each}}
       <form action="/gigs/add" method="POST">
         <div class="input-group">
-          <label for="title">Gig Title</label>
+          <label for="title">Coding Job Title</label>
           <input type="text" name="title" id="title" class="input-box" placeholder="eg. Small Wordpress website, React developer"
             maxlength="100" value={{title}}>
         </div>
@@ -23,7 +23,7 @@
           <input type="number" name="budget" id="budget" class="input-box" placeholder="eg. 500, 5000, 10000" value={{budget}}>
         </div>
         <div class="input-group">
-          <label for="description">Gig Description</label>
+          <label for="description">Coding Job Description</label>
           <textarea name="description" id="description" class="input-box" placeholder="Describe the details of the gig"
             rows="10">{{description}}</textarea>
         </div>
@@ -31,7 +31,7 @@
           <label for="budget">Contact Email</label>
           <input type="email" name="contact_email" id="contactemail" class="input-box" placeholder="Enter an email" value={{contact_email}}>
         </div>
-        <input type="submit" value="Add Gig" class="btn btn-reverse">
+        <input type="submit" value="Add Coding Job" class="btn btn-reverse">
       </form>
     </div>
   </section>
